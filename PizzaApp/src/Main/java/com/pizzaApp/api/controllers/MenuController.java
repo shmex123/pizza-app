@@ -18,29 +18,31 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pizzaApp.api.models.MenuItem;
+import com.pizzaApp.core.MenuItem;
+import com.pizzaApp.core.Menu;
 
 @RestController
 public class MenuController {
 	
-	private final Map<String, MenuItem> menu;
+	private final Menu menu;
 
 	public MenuController() {
-		menu = new HashMap<String, MenuItem>();
+		menu = new Menu();
 	}
 
 	@RequestMapping(method=RequestMethod.GET, value="/menu")
 	public List<MenuItem> getMenu() {
-		synchronized(menu) {
-			return new ArrayList<MenuItem>(menu.values());
-		}
+		return menu.list();
+	}
+
+	@RequestMapping(method=RequestMethod.GET, value="/menu/{menuItemId}")
+	public ResponseEntity<MenuItem> getMenuItem(@PathVariable(value="menuItemId") String id) {
+		return new ResponseEntity<MenuItem>(menu.get(id), HttpStatus.OK);
 	}
 
 	@RequestMapping(method=RequestMethod.POST, value="/menu")
 	public MenuItem createMenuItem(@RequestBody final MenuItem item) {
-		synchronized(menu) {
-			menu.put(item.getId(), item);
-		}
+		menu.addMenuItem(item);
 		return item;
 	}
 
@@ -48,8 +50,14 @@ public class MenuController {
 	public ResponseEntity<MenuItem> updateMenuItem(@PathVariable(value="menuItemId") String id,
 		@RequestBody final MenuItem item) {
 		if(menu.get(id) ==  null) throw new MenuItemNotFoundException();
-		menu.put(id, item);
+		menu.replace(id, item);
 		return new ResponseEntity<MenuItem>(item, HttpStatus.OK);
+	}
+
+	@RequestMapping(method=RequestMethod.DELETE, value="/menu/{menuItemId}")
+	public ResponseEntity<MenuItem> deleteMenuItem(@PathVariable(value="menuItemId") String id) {
+		if(menu.get(id) == null) throw new MenuItemNotFoundException();
+		return new ResponseEntity<MenuItem>(menu.removeById(id), HttpStatus.OK);
 	}
 
 	@ResponseStatus(value=HttpStatus.NOT_FOUND, reason="Menu Item does not exist!")

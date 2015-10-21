@@ -2,31 +2,54 @@
 
 package com.pizzaApp.core;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Menu {
 
-	Set<MenuItem> items = new HashSet<MenuItem>();
+	private Map<String, MenuItem> items = new HashMap<String, MenuItem>();
 	
 	public Menu(){
-		
 	}
-	public Menu(Set<MenuItem> i){
-		
+	public Menu(HashMap<String, MenuItem> i){
 		items=i;
-		
 	}
 	
 	public void addMenuItem(MenuItem item){
-		items.add(item);		
+		synchronized(items) {
+			items.put(item.getId(), item);		
+		}
 	}
 	
 	public void removeMenuItem(MenuItem item){		
-		items.remove(item);		
+		synchronized(items) {
+			items.remove(item.getId());		
+		}
 	}
-	public Set<MenuItem> getItems(){
-		return items;
+
+	public MenuItem removeById(String id) {
+		synchronized(id) {
+			return items.remove(id);
+		}
 	}
-	
+
+	public List<MenuItem> list(){
+		synchronized(items) {
+			return new ArrayList<MenuItem>(items.values());
+		}
+	}
+
+	public MenuItem get(String id) {
+		synchronized(items) {
+			return items.get(id);
+		}
+	}
+
+	public void replace(String id, MenuItem item) {
+		synchronized(items) {
+			items.put(id, item);
+		}
+	}
 }
