@@ -11,12 +11,14 @@ public class MenuItem {
 	private double price;
 	private boolean isSpecial = false;
 	private String size;
+	private MenuItemStatus status = MenuItemStatus.OPEN;
 	
 	public MenuItem() {
 		this.id = UUID.randomUUID().toString();
 	}
-	public MenuItem(String id, String name, boolean inStock,
+	public MenuItem(String name, boolean inStock,
 		double price, boolean isSpecial, String size) {
+		this.id = UUID.randomUUID().toString();
 		this.name = name;
 		this.inStock = inStock;
 		this.price = price;
@@ -64,5 +66,13 @@ public class MenuItem {
 	}
 	public void setSize(String size) {
 		this.size = size;
+	}
+	
+	public MenuItemStatus getStatus(){
+		return status;
+	}
+	
+	public void setStatus(MenuItemStatus status){
+		this.status = status;
 	}
 }

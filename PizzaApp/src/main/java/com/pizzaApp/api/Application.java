@@ -1,7 +1,7 @@
 
 
 
-package com.pizzaApp.api;
+package main.java.com.pizzaApp.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

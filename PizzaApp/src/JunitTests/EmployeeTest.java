@@ -4,10 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 import JunitTests.PersonTest;
-import Main.Address;
-import Main.Employee;
-import Main.Person;
-import Main.Position;
+import com.pizzaApp.core.Address;
+import com.pizzaApp.core.Employee;
+import com.pizzaApp.core.Person;
+import com.pizzaApp.core.Position;
 
 public class EmployeeTest {
 
