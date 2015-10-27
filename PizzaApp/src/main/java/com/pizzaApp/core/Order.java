@@ -11,6 +11,7 @@ public class Order {
 	private String timestamp;
 	private OrderStatus status;
 	private Set<LineItem> lineItems;
+	private Set<PaymentTransaction> transactions;
 	private boolean isDelivery;
 
 	public Order() {
@@ -45,6 +46,17 @@ public class Order {
 		return lineItems;
 	}
 
+	public void setLineItems(Set<LineItem> lineItems){
+		this.lineItems = lineItems;
+	}
+	
+	public Set<PaymentTransaction> getTransactions(){
+		return transactions;
+	}
+	
+	public void setTransactions(Set<PaymentTransaction> transactions){
+		this.transactions = transactions;
+	}
 	public boolean getIsDelivery() {
 		return isDelivery;
 	}
