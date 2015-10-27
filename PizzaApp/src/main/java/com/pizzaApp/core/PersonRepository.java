@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
-import JunitTests.Person;
 
 public class PersonRepository {
 
