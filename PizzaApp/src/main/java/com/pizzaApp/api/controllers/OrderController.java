@@ -50,21 +50,19 @@ public class OrderController {
 		return new ResponseEntity<Order>(order, HttpStatus.OK);
 	}
 
-	/*
-	@RequestMapping(method=RequestMethod.PUT, value="/lineItems/{lineItemId}")
-	public ResponseEntity<MenuItem> updateMenuItem(@PathVariable(value="menuItemId") String id,
-		@RequestBody final MenuItem item) {
-		if(menu.get(id) ==  null) throw new MenuItemNotFoundException();
-		menu.replace(id, item);
-		return new ResponseEntity<MenuItem>(item, HttpStatus.OK);
+	@RequestMapping(method=RequestMethod.PUT, value="/orders/{orderId}")
+	public ResponseEntity<Order> updateMenuItem(@PathVariable(value="orderId") String id,
+		@RequestBody final Order order) {
+		if(repo.get(id) ==  null) throw new OrderNotFoundException();
+		repo.replace(order);
+		return new ResponseEntity<Order>(order, HttpStatus.OK);
 	}
 
-	@RequestMapping(method=RequestMethod.DELETE, value="/lineItems/{lineItemId}")
-	public ResponseEntity<MenuItem> deleteMenuItem(@PathVariable(value="menuItemId") String id) {
-		if(menu.get(id) == null) throw new MenuItemNotFoundException();
-		return new ResponseEntity<MenuItem>(menu.removeById(id), HttpStatus.OK);
+	@RequestMapping(method=RequestMethod.DELETE, value="/orders/{orderId}")
+	public ResponseEntity<Order> deleteMenuItem(@PathVariable(value="orderId") String id) {
+		if(repo.get(id) == null) throw new OrderNotFoundException();
+		return new ResponseEntity<Order>(repo.removeById(id), HttpStatus.OK);
 	}
-	*/
 
 	@ResponseStatus(value=HttpStatus.NOT_FOUND, reason="Order does not exist!")
 	public class OrderNotFoundException extends RuntimeException {
