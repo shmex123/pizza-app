@@ -3,10 +3,9 @@ package JunitTests;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
-import Main.Manager;
-import Main.Person;
-import Main.Position;
+import com.pizzaApp.core.Manager;
+import com.pizzaApp.core.Person;
+import com.pizzaApp.core.Position;
 
 public class ManagerTest {
 

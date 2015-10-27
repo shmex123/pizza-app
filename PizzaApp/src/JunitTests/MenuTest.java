@@ -3,9 +3,8 @@ package JunitTests;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
-import Main.Menu;
-import Main.MenuItem;
+import com.pizzaApp.core.Menu;
+import com.pizzaApp.core.MenuItem;
 
 
 public class MenuTest {
@@ -15,11 +14,11 @@ public class MenuTest {
 
 		Menu menu = new Menu();
 
-		MenuItem cheese = new MenuItem("cheese Pizza", 9.99);
-		MenuItem pepperoni = new MenuItem("Pepperoni Pizza", 10.99);
-		MenuItem MeatLovers = new MenuItem("Meat Lovers Pizza", 12.99);
-		MenuItem veggie = new MenuItem("veggie Pizza", 10.99);
-		MenuItem sausage = new MenuItem("Sausage Pizza", 11.99);
+		MenuItem cheese = new MenuItem();
+		MenuItem pepperoni = new MenuItem();
+		MenuItem MeatLovers = new MenuItem();
+		MenuItem veggie = new MenuItem();
+		MenuItem sausage = new MenuItem();
 
 
 		menu.addMenuItem(cheese);

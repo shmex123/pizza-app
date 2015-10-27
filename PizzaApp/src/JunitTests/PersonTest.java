@@ -3,11 +3,9 @@ package JunitTests;
 import static org.junit.Assert.*;
 
 import java.lang.reflect.Array;
-
 import org.junit.Test;
-
-import Main.Address;
-import Main.Person;
+import com.pizzaApp.core.Person;
+import com.pizzaApp.core.Address;
 
 public class PersonTest {
 
