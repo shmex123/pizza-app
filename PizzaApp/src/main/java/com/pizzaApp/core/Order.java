@@ -1,6 +1,8 @@
 
 package com.pizzaApp.core;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.UUID;
@@ -11,7 +13,7 @@ public class Order {
 	private String timestamp;
 	private OrderStatus status;
 	private Set<LineItem> lineItems;
-	private Set<PaymentTransaction> transactions;
+	private List<PaymentTransaction> transactions;
 	private boolean isDelivery;
 
 	public Order() {
@@ -19,7 +21,7 @@ public class Order {
 		timestamp = "" + System.currentTimeMillis() / 1000L;
 		status = OrderStatus.OPEN;
 		lineItems = new HashSet<LineItem>();
-		transactions = new HashSet<PaymentTransaction>();
+		transactions = new ArrayList<PaymentTransaction>();
 	}
 
 	public String getId() {
@@ -51,11 +53,11 @@ public class Order {
 		this.lineItems = lineItems;
 	}
 	
-	public Set<PaymentTransaction> getTransactions(){
+	public List<PaymentTransaction> getTransactions(){
 		return transactions;
 	}
 	
-	public void setTransactions(Set<PaymentTransaction> transactions){
+	public void setTransactions(List<PaymentTransaction> transactions){
 		this.transactions = transactions;
 	}
 	public boolean getIsDelivery() {
