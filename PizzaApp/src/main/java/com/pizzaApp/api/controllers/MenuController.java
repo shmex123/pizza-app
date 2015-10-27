@@ -1,7 +1,7 @@
 
 
 
-package main.java.com.pizzaApp.api.controllers;
+package com.pizzaApp.api.controllers;
 
 import java.util.List;
 import java.util.ArrayList;

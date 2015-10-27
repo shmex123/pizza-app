@@ -32,6 +32,18 @@ public class OrderRepository {
 		}
 	}
 
+	public void replace(Order order) {
+		synchronized(orders) {
+			this.orders.put(order.getId(), order);
+		}
+	}
+
+	public Order removeById(String id) {
+		synchronized(orders) {
+			return this.orders.remove(id);
+		}
+	}
+
 	public List<Order> list() {
 		synchronized(orders) {
 			return new ArrayList<Order>(orders.values());
