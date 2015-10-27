@@ -1,5 +1,3 @@
-
-
 package com.pizzaApp.core;
 
 import java.util.List;

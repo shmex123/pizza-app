@@ -3,12 +3,16 @@
 
 package com.pizzaApp.core;
 
+import JunitTests.Address;
+import JunitTests.Person;
+
 public class Person {
 
-		String name;
-		String email;
-		String phone;
-		Address addr = null;
+		private String name;
+		private String email;
+		private String phone;
+		private Address addr = null;
+		private PersonType type = PersonType.CUSTOMER;
 		
 		//Constructor w/ no address passed
 		public Person (String name, String email, String phone){
@@ -51,9 +55,9 @@ public class Person {
 		public String toString(){
 			String str = "";
 			if(this.addr != null){
-				str = name + "\n" + email + "\n" + phone + "\n" + addr.toString();
+				str = name + "\n" + email + "\n" + phone + "\n" + type + "\n" + addr.toString();
 			}else{
-				str = name + "\n" + email + "\n" + phone + "\naddr = null";
+				str = name + "\n" + email + "\n" + phone + type + "\n" +"\naddr = null";
 			}
 			return str;
 		}
@@ -66,4 +70,45 @@ public class Person {
 			//TODO
 			return 0;
 		}
+		
+		public void setName(String name){
+			this.name = name;
+		}
+		
+		public String getName(){
+			return name;
+		}
+		
+		public void setEmail(String email){
+			this.email = email;
+		}
+		
+		public String getEmail(){
+			return email;
+		}
+		
+		public void setPhone(String phone){
+			this.phone = phone;
+		}
+		
+		public String getPhone(){
+			return phone;
+		}
+		
+		public void setAddr(Address addr){
+			this.addr = addr;
+		}
+		
+		public Address getAddr(){
+			return addr;
+		}
+		
+		public void setType(PersonType type){
+			this.type = type;
+		}
+		
+		public PersonType getType(){
+			return type;
+		}
+
 }

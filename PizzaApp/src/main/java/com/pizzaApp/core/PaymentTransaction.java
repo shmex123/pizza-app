@@ -1,19 +1,33 @@
 package com.pizzaApp.core;
 
+import java.util.UUID;
+
 public class PaymentTransaction {
+	
+	private String id;
 	private String timestamp;
 	private double amount;
 	private String paymentType;
 	
 			
 	public PaymentTransaction(){
-		timestamp = "" + System.currentTimeMillis() / 1000L;
+		this.id = UUID.randomUUID().toString();
+		this.timestamp = "" + System.currentTimeMillis() / 1000L;
 	}
 	
 	public PaymentTransaction(String timestamp, double amount, String paymentType){
+		this.id = UUID.randomUUID().toString();
 		this.timestamp =  timestamp;
 		this.amount = amount;
 		this.paymentType = paymentType;
+	}
+	
+	public String getId(){
+		return id;
+	}
+	
+	public void setId(String id){
+		this.id = id;
 	}
 	
 	public String getTimestamp(){

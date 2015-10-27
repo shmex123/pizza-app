@@ -19,6 +19,7 @@ public class Order {
 		timestamp = "" + System.currentTimeMillis() / 1000L;
 		status = OrderStatus.OPEN;
 		lineItems = new HashSet<LineItem>();
+		transactions = new HashSet<PaymentTransaction>();
 	}
 
 	public String getId() {
