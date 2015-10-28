@@ -16,6 +16,7 @@ public class Order {
 	private List<PaymentTransaction> transactions;
 	private boolean isDelivery;
 	private Person person;
+	
 
 	public Order() {
 		this.id = UUID.randomUUID().toString();
