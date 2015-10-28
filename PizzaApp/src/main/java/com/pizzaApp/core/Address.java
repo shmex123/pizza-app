@@ -10,6 +10,7 @@ public class Address {
 	String postalCode;
 	String country;
 	
+	
 	public Address (String address1, String address2, String city, String locality, String postalCode, String country){
 		this.address1 = address1;
 		this.address2 = address2;
