@@ -12,6 +12,7 @@ public class Menu {
 	private static final Menu instance = new Menu();
 	private Map<String, MenuItem> items = new HashMap<String, MenuItem>();
 	
+	//default constructor
 	private Menu(){
 		createSeedData();
 	}
