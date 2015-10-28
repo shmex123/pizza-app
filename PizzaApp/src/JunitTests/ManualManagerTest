@@ -1,0 +1,24 @@
+Manager Manual Test
+
+In the UI under the Manager view, 
+
+USER Action                                         Outcome
+
+Enter in new Item information
+click Add                                     new Menu Item should be listed under Menu
+
+click on 3 verticle dots next to
+the new menu Item 
+
+on dropdown click Make Special                verify that yellow star is next to the new menu Item
+
+click on 3 verticle dots next to
+the new menu Item 
+
+on dropdown click Remove Special             verify that yellow star is nolonger next the to new menu Item
+
+click on 3 verticle dots next to
+the new menu Item                           
+
+on dropdown click Delete                    verify that the new menu Item is nolonger on the Menu
+
