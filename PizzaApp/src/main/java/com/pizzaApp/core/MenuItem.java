@@ -13,9 +13,11 @@ public class MenuItem {
 	private String size;
 	private MenuItemStatus status = MenuItemStatus.OPEN;
 	
+	//default constructor
 	public MenuItem() {
 		this.id = UUID.randomUUID().toString();
 	}
+	//Constructor
 	public MenuItem(String name, boolean inStock,
 		double price, boolean isSpecial, String size) {
 		this.id = UUID.randomUUID().toString();
