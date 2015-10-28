@@ -15,6 +15,7 @@ public class Order {
 	private Set<LineItem> lineItems;
 	private List<PaymentTransaction> transactions;
 	private boolean isDelivery;
+	private Person person;
 
 	public Order() {
 		this.id = UUID.randomUUID().toString();
@@ -65,5 +66,11 @@ public class Order {
 	}
 	public void setIsDelivery(boolean isDelivery) {
 		this.isDelivery = isDelivery;
+	}
+	public Person getPerson() {
+		return person;
+	}
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 }

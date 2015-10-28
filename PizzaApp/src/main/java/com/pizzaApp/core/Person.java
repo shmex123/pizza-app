@@ -11,6 +11,9 @@ public class Person {
 		private String phone;
 		private Address addr = null;
 		private PersonType type = PersonType.CUSTOMER;
+
+		public Person() {
+		}
 		
 		//Constructor w/ no address passed
 		public Person (String name, String email, String phone){
