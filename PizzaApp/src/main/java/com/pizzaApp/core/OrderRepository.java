@@ -33,6 +33,8 @@ public class OrderRepository {
 	public void replace(Order order) {
 		synchronized(orders) {
 			this.orders.put(order.getId(), order);
+			order.setTimestamp("" + System.currentTimeMillis() / 1000L);
+			order.checkIfPayed();
 		}
 	}
 

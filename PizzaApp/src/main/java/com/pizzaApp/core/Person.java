@@ -3,8 +3,6 @@
 
 package com.pizzaApp.core;
 
-import JunitTests.Address;
-import JunitTests.Person;
 
 public class Person {
 
