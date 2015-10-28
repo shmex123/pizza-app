@@ -67,10 +67,26 @@ public class Order {
 	public void setIsDelivery(boolean isDelivery) {
 		this.isDelivery = isDelivery;
 	}
+
 	public Person getPerson() {
 		return person;
 	}
 	public void setPerson(Person person) {
 		this.person = person;
+	
+	public void checkIfPayed(){
+		double runningTotal = 0;
+		double amountPaid = 0;
+		
+		for(LineItem l : lineItems){
+			runningTotal += l.getItem().getPrice();
+		}
+		
+		for(PaymentTransaction t : transactions){
+			amountPaid += t.getAmount();
+		}
+		
+		if(amountPaid >= runningTotal)
+			setStatus(OrderStatus.PAYED);
 	}
 }
