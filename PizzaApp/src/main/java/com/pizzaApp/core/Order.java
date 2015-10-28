@@ -73,6 +73,7 @@ public class Order {
 	}
 	public void setPerson(Person person) {
 		this.person = person;
+	}
 	
 	public void checkIfPayed(){
 		double runningTotal = 0;

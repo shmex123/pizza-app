@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pizzaApp.core.Order;
+import com.pizzaApp.core.OrderStatus;
 import com.pizzaApp.core.OrderRepository;
 
 @RestController
@@ -55,6 +56,15 @@ public class OrderController {
 		@RequestBody final Order order) {
 		if(repo.get(id) ==  null) throw new OrderNotFoundException();
 		repo.replace(order);
+		return new ResponseEntity<Order>(order, HttpStatus.OK);
+	}
+
+	@RequestMapping(method=RequestMethod.PUT, value="/orders/{orderId}/fulfilled")
+	public ResponseEntity<Order> updateOrderFulfilled(@PathVariable(value="orderId") String id,
+		@RequestBody final Order order) {
+		if(repo.get(id) ==  null) throw new OrderNotFoundException();
+		repo.replace(order);
+		order.setStatus(OrderStatus.FULFILLED);
 		return new ResponseEntity<Order>(order, HttpStatus.OK);
 	}
 
