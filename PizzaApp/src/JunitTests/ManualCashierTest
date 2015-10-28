@@ -1,0 +1,27 @@
+In UI under the Cashier view
+
+
+
+USER Action                                         Outcome
+
+click on the green plus icon
+next to Hot Wings                                 Hot Wings should appear on My Order with a 1x
+
+click on the blue up arrow icon
+next to Hot Wings in My Order                   Hot Wings should appear on My Order with a 2x
+
+click on the green plus icon
+next to Soda                                    Soda should appear on My Order with a 1x
+                                                Total: shoud be $7.98
+                                                
+click on the Place Order 
+Button in MY Order                              Balance: should be $7.98
+
+enter in 2 in ammont under Credit Card
+and click Add                                   Balence: should now equal $5.98
+
+enter 8 in amount under Cash 
+and click Add                                   Balence: should now equal 0 and tip
+                                                should equal $2.02
+                                                
+Click Submit                                    UI should reset
