@@ -16,7 +16,7 @@ public class Order {
 	private List<PaymentTransaction> transactions;
 	private boolean isDelivery;
 	private Person person;
-	String PhoneNumber;
+	String PhoneNumber = "";
 	
 
 	public Order() {
@@ -25,7 +25,6 @@ public class Order {
 		status = OrderStatus.OPEN;
 		lineItems = new HashSet<LineItem>();
 		transactions = new ArrayList<PaymentTransaction>();
-		PhoneNumber = ""
 	}
 
 	public String getId() {
