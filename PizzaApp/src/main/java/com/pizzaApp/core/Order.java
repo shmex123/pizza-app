@@ -16,6 +16,7 @@ public class Order {
 	private List<PaymentTransaction> transactions;
 	private boolean isDelivery;
 	private Person person;
+	String PhoneNumber;
 	
 
 	public Order() {
@@ -24,6 +25,7 @@ public class Order {
 		status = OrderStatus.OPEN;
 		lineItems = new HashSet<LineItem>();
 		transactions = new ArrayList<PaymentTransaction>();
+		PhoneNumber = ""
 	}
 
 	public String getId() {
@@ -74,6 +76,12 @@ public class Order {
 	}
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+	public String getPhoneNumber() {
+		return PhoneNumber;
+	}
+	public void setPhoneNumber(String phoneNum){
+		this.PhoneNumber = phoneNum;
 	}
 	
 	public void checkIfPayed(){
