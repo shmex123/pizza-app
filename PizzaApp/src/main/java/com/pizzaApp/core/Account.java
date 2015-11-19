@@ -1,12 +1,21 @@
 package com.pizzaApp.core;
 
+import java.util.UUID;
+
 public class Account {
 
+	private String id;
 	private String email;
 	private String password;
 	private int points; 
 	
-	public Account(){}
+	public Account(){
+		this.id = UUID.randomUUID().toString();
+	}
+
+	public String getId() {
+		return id;
+	}
 	
 	public String getEmail(){
 		return email;

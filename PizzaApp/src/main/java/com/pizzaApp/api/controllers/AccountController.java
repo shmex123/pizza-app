@@ -35,9 +35,9 @@ public class AccountController {
 		return repo.list();
 	}
 
-	@RequestMapping(method=RequestMethod.GET, value="/accounts/{email}")
-	public ResponseEntity<Account> getAccount(@PathVariable(value="email") String email) {
-		return new ResponseEntity<Account>(repo.get(email), HttpStatus.OK);
+	@RequestMapping(method=RequestMethod.GET, value="/accounts/{accountId}")
+	public ResponseEntity<Account> getAccount(@PathVariable(value="accountId") String accountId) {
+		return new ResponseEntity<Account>(repo.get(accountId), HttpStatus.OK);
 	}
 
 	@RequestMapping(method=RequestMethod.POST, value="/register")
@@ -46,11 +46,11 @@ public class AccountController {
 		return account;
 	}
 
-	@RequestMapping(method=RequestMethod.PUT, value="/accounts/{email}")
-	public ResponseEntity<Account> updateAccount(@PathVariable(value="email") String email,
+	@RequestMapping(method=RequestMethod.PUT, value="/accounts/{accountId}")
+	public ResponseEntity<Account> updateAccount(@PathVariable(value="accountId") String accountId,
 		@RequestBody final Account account) {
-		if(repo.get(email) ==  null) throw new AccountNotFoundException();
-		repo.replace(email, account);
+		if(repo.get(accountId) ==  null) throw new AccountNotFoundException();
+		repo.replace(accountId, account);
 		return new ResponseEntity<Account>(account, HttpStatus.OK);
 	}
 

@@ -18,21 +18,21 @@ public class AccountRepository {
 		return instance;
 	}
 	
-	public Account get(String email) {
+	public Account get(String id) {
 		synchronized(accounts) {
-			return accounts.get(email);
+			return accounts.get(id);
 		}
 	}
 	
 	public void add(Account account) {
 		synchronized(accounts) {
-			this.accounts.put(account.getEmail(), account);
+			this.accounts.put(account.getId(), account);
 		}
 	}
 	
-	public void replace(String email, Account account) {
+	public void replace(String id, Account account) {
 		synchronized(accounts) {
-			this.accounts.put(email, account);
+			this.accounts.put(id, account);
 		}
 	}
 	
