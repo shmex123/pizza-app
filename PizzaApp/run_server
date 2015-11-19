@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+export JAVA_HOME=/usr/local/jdk1.8.0_51-64/
+~/gradle-2.8/bin/gradle build
+java -jar build/libs/pizzaAppServer-1.0.jar --server.port=10105
