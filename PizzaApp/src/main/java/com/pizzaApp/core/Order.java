@@ -84,10 +84,10 @@ public class Order {
 		this.address = address;
 	}
 	public String getPhoneNumber() {
-		return PhoneNumber;
+		return phoneNumber;
 	}
 	public void setPhoneNumber(String phoneNum){
-		this.PhoneNumber = phoneNum;
+		this.phoneNumber = phoneNum;
 	}
 	
 	public void checkIfPayed(){
