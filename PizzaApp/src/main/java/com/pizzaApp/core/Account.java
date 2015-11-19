@@ -6,6 +6,7 @@ public class Account {
 	private String password;
 	private int points; 
 	
+	public Account(){}
 	
 	public String getEmail(){
 		return email;
