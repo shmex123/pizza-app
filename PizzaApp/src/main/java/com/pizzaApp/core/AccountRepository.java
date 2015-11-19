@@ -12,6 +12,29 @@ public class AccountRepository {
 	
 	private AccountRepository(){
 		accounts = new HashMap<String, Account>();
+
+		String password = "password";
+		String email = "@cs414.com";
+
+		Account manager = new Account();
+		Account cashier = new Account();
+		Account customer = new Account();
+		Account cook = new Account();
+
+		manager.setEmail("manager" + email);
+		cashier.setEmail("cashier" + email);
+		customer.setEmail("customer" + email);
+		cook.setEmail("cook" + email);
+
+		manager.setPassword(password);
+		cashier.setPassword(password);
+		customer.setPassword(password);
+		cook.setPassword(password);
+
+		add(manager);
+		add(cashier);
+		add(customer);
+		add(cook);
 	}
 
 	public static AccountRepository sharedInstance() {
