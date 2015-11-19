@@ -16,7 +16,8 @@ public class Order {
 	private List<PaymentTransaction> transactions;
 	private boolean isDelivery;
 	private Person person;
-	String PhoneNumber = "";
+	private Address address;
+	private String phoneNumber = "";
 	
 
 	public Order() {
@@ -75,6 +76,12 @@ public class Order {
 	}
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	public String getPhoneNumber() {
 		return PhoneNumber;
