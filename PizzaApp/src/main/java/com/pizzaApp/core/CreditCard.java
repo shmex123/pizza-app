@@ -5,7 +5,7 @@ public class CreditCard{
   private String CVS;
   private String Number;
   private String Name;
-  private String Experation
+  private String Experation;
   
   public CreditCard(){}
   
