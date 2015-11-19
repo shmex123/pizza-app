@@ -18,12 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-//import com.pizzaApp.core.AccountRepository;
-//import com.pizzaApp.core.Account;
+import com.pizzaApp.core.AccountRepository;
+import com.pizzaApp.core.Account;
 
-//@RestController
+@RestController
 public class AccountController {
-/*
 	
 	private final AccountRespository repo;
 
@@ -58,5 +57,4 @@ public class AccountController {
 	@ResponseStatus(value=HttpStatus.NOT_FOUND, reason="Account does not exist!")
 	public class AccountNotFoundException extends RuntimeException {
 	}
-*/
 }
