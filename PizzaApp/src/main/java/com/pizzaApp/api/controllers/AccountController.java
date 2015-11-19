@@ -24,34 +24,34 @@ import com.pizzaApp.core.Account;
 @RestController
 public class AccountController {
 	
-	private final AccountRespository repo;
+	private final AccountRepository repo;
 
 	public AccountController() {
 		repo = AccountRepository.sharedInstance();
 	}
 
-	@RequestMapping(method=RequestMethod.GET, value="/account")
+	@RequestMapping(method=RequestMethod.GET, value="/accounts")
 	public List<Account> listAccounts() {
 		return repo.list();
 	}
 
-	@RequestMapping(method=RequestMethod.GET, value="/account/{email}")
-	public ResponseEntity<MenuItem> getAccount(@PathVariable(value="email") String email) {
+	@RequestMapping(method=RequestMethod.GET, value="/accounts/{email}")
+	public ResponseEntity<Account> getAccount(@PathVariable(value="email") String email) {
 		return new ResponseEntity<Account>(repo.get(email), HttpStatus.OK);
 	}
 
 	@RequestMapping(method=RequestMethod.POST, value="/register")
 	public Account createAccount(@RequestBody final Account account) {
-		repo.addAccount(account);
+		repo.add(account);
 		return account;
 	}
 
-	@RequestMapping(method=RequestMethod.PUT, value="/account/{email}")
+	@RequestMapping(method=RequestMethod.PUT, value="/accounts/{email}")
 	public ResponseEntity<Account> updateAccount(@PathVariable(value="email") String email,
 		@RequestBody final Account account) {
 		if(repo.get(email) ==  null) throw new AccountNotFoundException();
 		repo.replace(email, account);
-		return new ResponseEntity<Account>(item, HttpStatus.OK);
+		return new ResponseEntity<Account>(account, HttpStatus.OK);
 	}
 
 	@ResponseStatus(value=HttpStatus.NOT_FOUND, reason="Account does not exist!")

@@ -30,9 +30,9 @@ public class AccountRepository {
 		}
 	}
 	
-	public void replace(Account account) {
+	public void replace(String email, Account account) {
 		synchronized(accounts) {
-			this.accounts.put(account.getEmail(), account);
+			this.accounts.put(email, account);
 		}
 	}
 	
