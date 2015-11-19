@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pizzaApp.core.AccountRepository;
 import com.pizzaApp.core.Account;
+import com.pizzaApp.core.Login;
 
 @RestController
 public class AccountController {
@@ -44,6 +45,16 @@ public class AccountController {
 	public Account createAccount(@RequestBody final Account account) {
 		repo.add(account);
 		return account;
+	}
+
+	@RequestMapping(method=RequestMethod.POST, value="/login")
+	public ResponseEntity<Account> getAccount(@RequestBody final Login login) {
+		Account account = repo.authenticate(login.getEmail(), login.getPassword());
+		if(account == null) {
+			throw new AccountNotFoundException();
+		} else {
+			return new ResponseEntity<Account>(account, HttpStatus.OK);
+		}
 	}
 
 	@RequestMapping(method=RequestMethod.PUT, value="/accounts/{accountId}")

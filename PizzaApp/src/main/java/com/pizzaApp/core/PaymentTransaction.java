@@ -8,7 +8,7 @@ public class PaymentTransaction {
 	private String timestamp;
 	private double amount;
 	private String paymentType;
-	private CreditCard CardInformation;
+	private CreditCard card;
 	
 			
 	public PaymentTransaction(){
@@ -23,12 +23,12 @@ public class PaymentTransaction {
 		this.paymentType = paymentType;
 	}
 	
-	public CreditCard getCardInformation(){
-		return CardInformation;
+	public CreditCard getCard(){
+		return card;
 	}
 	
-	public void setCardInformation(CreditCard CardInformation){
-		this.CardInformaion = cardInformation;
+	public void setCard(CreditCard card){
+		this.card = card;
 	}
 	
 	public String getId(){

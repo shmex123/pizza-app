@@ -41,5 +41,14 @@ public class AccountRepository {
 			return new ArrayList<Account>(accounts.values());
 		}
 	}
+
+	public Account authenticate(String email, String password) {
+		for(Account account : list()) {
+			if(email.equals(account.getEmail())) {
+				if(password.equals(account.getPassword())) return account;
+			}
+		}
+		return null;
+	}
 }
 
